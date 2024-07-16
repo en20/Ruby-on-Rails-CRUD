@@ -1,0 +1,39 @@
+<h1 class="display-4 mb-4">Add New Friend</h1>
+
+<div class="container py-5 bg-light rounded-3 shadow-sm">
+  <div class="col-md-8 mx-auto">
+    <div class="card p-4 border-0 shadow-sm">
+      <%= form_with(model: @friend, local: true) do |form| %>
+        <div class="mb-3">
+          <%= form.label :first_name, class: "form-label" %>
+          <%= form.text_field :first_name, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :last_name, class: "form-label" %>
+          <%= form.text_field :last_name, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :email, class: "form-label" %>
+          <%= form.email_field :email, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :phone, class: "form-label" %>
+          <%= form.telephone_field :phone, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :instagram, class: "form-label" %>
+          <%= form.text_field :instagram, class: "form-control" %>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <%= form.submit "Add Friend", class: "btn btn-primary me-2" %>
+          <%= link_to "Back to friends", friends_path, class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
